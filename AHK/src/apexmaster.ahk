@@ -66,12 +66,12 @@ global R301_PIXELS := LoadPixel("r301")
 global RE45_PIXELS := LoadPixel("re45")
 global P2020_PIXELS := LoadPixel("p2020")
 global ALTERNATOR_PIXELS := LoadPixel("alternator")
+global SPITFIRE_PIXELS := LoadPixel("spitfire")
+global G7_PIXELS := LoadPixel("g7")
 ; heavy weapon
 global FLATLINE_PIXELS := LoadPixel("flatline")
 global PROWLER_PIXELS := LoadPixel("prowler")
 global HEMLOK_PIXELS := LoadPixel("hemlok")
-global RAMPAGE_PIXELS := LoadPixel("rampage")
-global WINGMAN_PIXELS := LoadPixel("wingman")
 global P3030_PIXELS := LoadPixel("p3030")
 ; special
 global CAR_PIXELS := LoadPixel("car")
@@ -79,10 +79,9 @@ global CAR_PIXELS := LoadPixel("car")
 global LSTAR_PIXELS := LoadPixel("lstar")
 global DEVOTION_PIXELS := LoadPixel("devotion")
 global HAVOC_PIXELS := LoadPixel("havoc")
-; supply drop weapon
-global G7_PIXELS := LoadPixel("g7")
-global SPITFIRE_PIXELS := LoadPixel("spitfire")
 global VOLT_PIXELS := LoadPixel("volt")
+; supply drop weapon
+global RAMPAGE_PIXELS := LoadPixel("rampage")
 ; Turbocharger
 global HAVOC_TURBOCHARGER_PIXELS := LoadPixel("havoc_turbocharger")
 global DEVOTION_TURBOCHARGER_PIXELS := LoadPixel("devotion_turbocharger")
@@ -122,26 +121,23 @@ global R99_PATTERN := LoadPattern("R99.txt")
 global RE45_PATTERN := LoadPattern("RE45.txt")
 global P2020_PATTERN := LoadPattern("P2020.txt")
 global ALTERNATOR_PATTERN := LoadPattern("Alternator.txt")
+global G7_Pattern := LoadPattern("G7.txt")
+global CAR_PATTERN := LoadPattern("CAR.txt")
 ; energy weapon pattern
 global LSTAR_PATTERN := LoadPattern("Lstar.txt")
+global VOLT_PATTERN := LoadPattern("Volt.txt")
 global DEVOTION_PATTERN := LoadPattern("Devotion.txt")
 global TURBODEVOTION_PATTERN := LoadPattern("DevotionTurbo.txt")
 global HAVOC_PATTERN := LoadPattern("Havoc.txt")
 global TURBOHAVOC_PATTERN := LoadPattern("HavocTurbo.txt")
-global P3030_PATTERN := LoadPattern("3030.txt")
-; special
-global CAR_PATTERN := LoadPattern("CAR.txt")
 ; heavy weapon pattern
 global FLATLINE_PATTERN := LoadPattern("Flatline.txt")
-global RAMPAGE_PATTERN := LoadPattern("Rampage.txt")
-global RAMPAGEAMP_PATTERN := LoadPattern("RampageAmp.txt")
 global PROWLER_PATTERN := LoadPattern("Prowler.txt")
 global HEMLOK_PATTERN := LoadPattern("Hemlok.txt")
-global WINGMAN_PATTERN := LoadPattern("Wingman.txt")
+global CAR_PATTERN := LoadPattern("CAR.txt")
 ; supply drop weapon pattern
-global SPITFIRE_PATTERN := LoadPattern("Spitfire.txt")
-global G7_Pattern := LoadPattern("G7.txt")
-global VOLT_PATTERN := LoadPattern("Volt.txt")
+global RAMPAGE_PATTERN := LoadPattern("Rampage.txt")
+global RAMPAGEAMP_PATTERN := LoadPattern("RampageAmp.txt")
 ; tips setting
 global hint_method := "Say"
 
@@ -250,10 +246,6 @@ DetectAndSetWeapon()
         } else if (CheckWeapon(CAR_PIXELS)) { 
             current_weapon_type := CAR_WEAPON_TYPE 
             current_pattern := CAR_PATTERN 
-        } else if (CheckWeapon(P3030_PIXELS)) {
-            current_weapon_type := P3030_WEAPON_TYPE 
-            current_pattern := P3030_PATTERN
-            is_single_fire_weapon := false
         }
     } else if (check_point_color == ENERGY_WEAPON_COLOR) {
         if (CheckWeapon(LSTAR_PIXELS)) {
